@@ -9,7 +9,7 @@ class TwitterClient(object):
         with open("tokens.txt") as f:
             tokens = f.readlines()
         tokens = [x.strip() for x in tokens]
-        print tokens
+       # print tokens
         consumer_key = tokens[0]
         consumer_secret = tokens[1]
         access_token = tokens[2]
@@ -60,7 +60,7 @@ class TwitterClient(object):
 def main():
     # create TwitterClient object
     api = TwitterClient()
-    count = 5000
+    count = 10000
     tweets = api.get_tweets(query = "#HuntRepublicanCongressman", count = count)
     pos_tweets = [tweet for tweet in tweets if tweet['sentiment'] == 'positive']
     neg_tweets = [tweet for tweet in tweets if tweet['sentiment'] == 'negative']
